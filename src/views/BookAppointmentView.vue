@@ -67,7 +67,7 @@ function saveBooking() {
         <div><span class="review-label">MOBILE NUMBER</span><strong>{{ bookingForm.phone }}</strong></div>
         <div class="review-notes"><span class="review-label">NOTES</span><strong>{{ bookingForm.notes || 'No additional notes' }}</strong></div>
       </div>
-      <div class="review-reminder"><span>✧</span><p>Bring a valid ID and the required documents when you visit the barangay hall.</p><RouterLink to="/requirements">View requirements →</RouterLink></div>
+      <div class="review-reminder"><span>✧</span><p>Bring a valid ID and the required documents when you visit the barangay hall.</p><RouterLink :to="{ name: 'requirements' }">View requirements →</RouterLink></div>
       <div class="form-actions review-actions">
         <button class="button button-outline" type="button" @click="reviewing = false">← Back to details</button>
         <button class="button button-primary" type="button" @click="saveBooking">Save appointment <span>✓</span></button>
@@ -85,7 +85,7 @@ function saveBooking() {
         <div class="aside-info"><span>Service fee</span><strong>{{ selectedService?.fee || 'See service details' }}</strong></div>
       </article>
       <article class="requirement-tip">
-        <span>✧</span><div><strong>Bring your requirements</strong><p>Don't forget to bring a valid ID and any documents needed for your selected service.</p><RouterLink to="/requirements">See what's needed →</RouterLink></div>
+        <span>✧</span><div><strong>Bring your requirements</strong><p>Don't forget to bring a valid ID and any documents needed for your selected service.</p><RouterLink :to="{ name: 'requirements' }">See what's needed →</RouterLink></div>
       </article>
     </aside>
   </div>

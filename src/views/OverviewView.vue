@@ -62,7 +62,7 @@ function book(serviceName) {
     <article class="panel appointments-panel">
       <div class="panel-heading">
         <div><h2>Today's appointments</h2><p>Your upcoming barangay visits</p></div>
-        <RouterLink class="text-button" to="/appointments">View all <span>→</span></RouterLink>
+        <RouterLink class="text-button" :to="{ name: 'appointments' }">View all <span>→</span></RouterLink>
       </div>
       <div v-if="todayAppointments.length" class="today-list">
         <div v-for="appointment in todayAppointments.slice(0, 4)" :key="appointment.id" class="today-row">
@@ -70,11 +70,11 @@ function book(serviceName) {
           <div class="appointment-avatar">{{ appointment.resident.split(' ').map((part) => part[0]).slice(0, 2).join('') }}</div>
           <div class="today-detail"><strong>{{ appointment.resident }}</strong><small>{{ appointment.service }}</small></div>
           <span class="status-pill" :class="appointment.status.toLowerCase()">{{ appointment.status }}</span>
-          <RouterLink class="row-arrow" aria-label="Manage appointment" to="/appointments">↗</RouterLink>
+          <RouterLink class="row-arrow" aria-label="Manage appointment" :to="{ name: 'appointments' }">↗</RouterLink>
         </div>
       </div>
       <div v-else class="empty-state compact-empty"><span>☀</span><strong>A little quiet today</strong><p>No appointments are scheduled for today.</p></div>
-      <RouterLink class="schedule-link" to="/appointments">Open appointment records <span>→</span></RouterLink>
+      <RouterLink class="schedule-link" :to="{ name: 'appointments' }">Open appointment records <span>→</span></RouterLink>
     </article>
 
     <article class="panel quick-panel">
@@ -84,14 +84,14 @@ function book(serviceName) {
         <span><strong>{{ service.name }}</strong><small>{{ service.turnaround }}</small></span>
         <span class="service-arrow">→</span>
       </button>
-      <RouterLink class="service-directory" to="/requirements">Browse all services <span>→</span></RouterLink>
+      <RouterLink class="service-directory" :to="{ name: 'requirements' }">Browse all services <span>→</span></RouterLink>
     </article>
   </section>
 
   <section class="notice-banner">
     <span class="banner-symbol">✦</span>
     <div><strong>Plan ahead for a smoother visit</strong><p>Check the requirements before your appointment to make sure you have everything you need.</p></div>
-    <RouterLink class="button button-light" to="/requirements">View requirements <span>→</span></RouterLink>
+    <RouterLink class="button button-light" :to="{ name: 'requirements' }">View requirements <span>→</span></RouterLink>
     <span class="banner-decoration">✳</span>
   </section>
 </template>
