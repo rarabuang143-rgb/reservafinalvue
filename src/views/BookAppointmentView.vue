@@ -20,11 +20,20 @@ const bookingForm = reactive({
 const selectedService = computed(() => services.find((service) => service.name === bookingForm.service))
 
 function reviewBooking() {
+  const requiredFields = ['service', 'date', 'time', 'resident', 'phone']
+  const hasMissingField = requiredFields.some((field) => !String(bookingForm[field] ?? '').trim())
+
+  if (hasMissingField) {
+    notice.value = 'Please complete all required appointment details before continuing.'
+    return
+  }
+
   const appointmentDay = new Date(`${bookingForm.date}T00:00:00`).getDay()
   if (appointmentDay === 0 || appointmentDay === 6) {
     notice.value = 'Please choose a weekday. The barangay office is open Monday to Friday.'
     return
   }
+
   notice.value = ''
   reviewing.value = true
 }

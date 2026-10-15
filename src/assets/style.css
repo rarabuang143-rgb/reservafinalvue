@@ -64,8 +64,18 @@ a { color: inherit; }
 .office-status { font-size: 10px; color: #557262; font-weight: 600; display: flex; align-items: center; gap: 7px; }
 .office-status > span { width: 6px; height: 6px; border-radius: 50%; background: #52a36a; box-shadow: 0 0 0 3px #edf6ee; }
 .office-status small { color: #9ba59c; font-size: 9px; font-weight: 400; margin-left: -4px; }
+.notification-wrapper { position: relative; }
 .icon-button { position: relative; border: 0; background: transparent; width: 27px; height: 27px; cursor: pointer; color: #7d8980; font-size: 18px; }
 .notification-button i { position: absolute; right: 2px; top: 2px; width: 5px; height: 5px; border-radius: 50%; background: #da896d; border: 1px solid #fff; }
+.notification-panel { position: absolute; right: 0; top: calc(100% + 10px); width: 250px; background: #fff; border: 1px solid #e5eadf; border-radius: 10px; box-shadow: 0 14px 30px rgba(24, 39, 31, 0.08); overflow: hidden; z-index: 8; }
+.notification-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-bottom: 1px solid #eef1ee; background: #f7faf7; }
+.notification-header strong { font-size: 10px; color: #3c4d42; }
+.notification-header span { display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; border-radius: 999px; padding: 0 5px; background: #edf5ee; color: #2f7150; font-size: 8px; font-weight: 700; }
+.notification-item { padding: 10px 12px; border-bottom: 1px solid #f3f6f3; }
+.notification-item:last-child { border-bottom: 0; }
+.notification-item strong { display: block; font-size: 9px; color: #2b3c32; margin-bottom: 4px; }
+.notification-item p { margin: 0 0 5px; color: #76837a; font-size: 8px; line-height: 1.5; }
+.notification-item small { color: #9aa39b; font-size: 7px; }
 .page-content { width: min(100%, 1300px); padding: 35px 42px 34px; margin: 0 auto; flex: 1; }
 .welcome-row, .page-heading { display: flex; justify-content: space-between; align-items: flex-end; }
 .eyebrow { display: flex; gap: 8px; align-items: center; font: 700 9px 'Manrope', sans-serif; color: #849187; letter-spacing: 1.05px; }
